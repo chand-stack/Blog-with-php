@@ -19,7 +19,7 @@ include 'partials/header.php'
         <i class="uil uil-pen"></i>
         <h5>Add Post</h5>
     </a></li>
-    <li><a href="index.php">
+    <li><a href="index.php"   class="active">
         <i class="uil uil-postcard"></i>
         <h5>Manage Posts</h5>
     </a></li>
@@ -35,43 +35,49 @@ include 'partials/header.php'
         <i class="uil uil-create-dashboard"></i>
         <h5>Add Category</h5>
     </a></li>
-    <li><a href="manage-categories.php" class="active">
+    <li><a href="manage-categories.php">
         <i class="uil uil-clipboard-notes"></i>
         <h5>Manage Categories</h5>
     </a></li>
 </ul>
 </aside>
 <main>
-<h2>Manage Categories</h2>
+<h2>Manage Posts</h2>
 <table>
     <thead>
         <tr>
             <th>Title</th>
+            <th>Username</th>
             <th>Edit</th>
             <th>Delete</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>Travel</td>
-            <td><a href="edit-category.php" class="btn sm">Edit</a></td>
-            <td><a href="edit-category.php" class="btn sm danger">Delete</a></td>
-        </tr>
-        <tr>
+            <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</td>
             <td>Wild Life</td>
-            <td><a href="edit-category.php" class="btn sm">Edit</a></td>
+            <td><a href="edit-user.php" class="btn sm">Edit</a></td>
             <td><a href="edit-category.php" class="btn sm danger">Delete</a></td>
         </tr>
         <tr>
-            <td>Music</td>
-            <td><a href="edit-category.php" class="btn sm">Edit</a></td>
+            <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</td>
+            <td>Wild Life</td>
+            <td><a href="edit-user.php" class="btn sm">Edit</a></td>
             <td><a href="edit-category.php" class="btn sm danger">Delete</a></td>
         </tr>
+        <tr>
+            <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</td>
+            <td>Wild Life</td>
+            <td><a href="edit-user.php" class="btn sm">Edit</a></td>
+            <td><a href="edit-category.php" class="btn sm danger">Delete</a></td>
+        </tr>
+        
     </tbody>
 </table>
 </main>
 </div>
 </section>
+
 
 <?php
 include '../partials/footer.php'
