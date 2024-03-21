@@ -1,4 +1,5 @@
 <?php
+session_start();
 define('ROOT_URL','http://localhost/blogg/');
 define('DB_HOST','localhost');
 define('DB_USER', 'chand');
