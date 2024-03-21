@@ -17,7 +17,7 @@ if(isset($_SESSION['user-id'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog</title>
     <!-- CUSTOM STYLE -->
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="<?= ROOT_URL?>/css/style.css">
     <!-- ICONSCOUT CDN -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
     <!-- GOOGLE FONT (MONTSERRAT)-->
