@@ -1,5 +1,16 @@
 <?php 
-require 'config/constants.php'
+require 'config/constants.php';
+
+// get back form data if there was a registration error
+
+$firstname = $_SESSION['signup-data']['firstname'] ?? null;
+$lastname = $_SESSION['signup-data']['lastname'] ?? null;
+$username = $_SESSION['signup-data']['username'] ?? null;
+$email = $_SESSION['signup-data']['email'] ?? null;
+$createpassword = $_SESSION['signup-data']['createpassword'] ?? null;
+$confirmpassword = $_SESSION['signup-data']['confirmpassword'] ?? null;
+
+
 ?>
 
 <!DOCTYPE html>
@@ -37,12 +48,12 @@ if(isset($_SESSION['signup'])) : ?>
 
 <?php endif ?>
 <form action="<?= ROOT_URL ?>signup-logic.php" enctype="multipart/form-data" method="post">
-    <input type="text" name="firstname" placeholder="First Name">
-    <input type="text" name="lastname" placeholder="Last Name">
-    <input type="text" name="username" placeholder="Username">
-    <input type="email" name="email" placeholder="Email">
-    <input type="password" name="createdpassword" placeholder="Create Password">
-    <input type="password" name="confirmpassword" placeholder="Confirm Password">
+    <input type="text" name="firstname" value="<?= $firstname ?>" placeholder="First Name">
+    <input type="text" name="lastname" value="<?= $lastname ?>" placeholder="Last Name">
+    <input type="text" name="username" value="<?= $username ?>" placeholder="Username">
+    <input type="email" name="email" value="<?= $email ?>" placeholder="Email">
+    <input type="password" name="createdpassword" value="<?= $createpassword ?>" placeholder="Create Password">
+    <input type="password" name="confirmpassword" value="<?= $confirmpassword ?>" placeholder="Confirm Password">
     <div class="form_control">
       <label for="avatar">User Avatar</label>
       <input type="file" name="avatar" id="avatar">
