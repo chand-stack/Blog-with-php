@@ -10,7 +10,8 @@ $email = $_SESSION['signup-data']['email'] ?? null;
 $createpassword = $_SESSION['signup-data']['createpassword'] ?? null;
 $confirmpassword = $_SESSION['signup-data']['confirmpassword'] ?? null;
 
-
+// delete signup data session
+unset($_SESSION['signup-data']);
 ?>
 
 <!DOCTYPE html>
@@ -52,7 +53,7 @@ if(isset($_SESSION['signup'])) : ?>
     <input type="text" name="lastname" value="<?= $lastname ?>" placeholder="Last Name">
     <input type="text" name="username" value="<?= $username ?>" placeholder="Username">
     <input type="email" name="email" value="<?= $email ?>" placeholder="Email">
-    <input type="password" name="createdpassword" value="<?= $createpassword ?>" placeholder="Create Password">
+    <input type="password" name="createpassword" value="<?= $createpassword ?>" placeholder="Create Password">
     <input type="password" name="confirmpassword" value="<?= $confirmpassword ?>" placeholder="Confirm Password">
     <div class="form_control">
       <label for="avatar">User Avatar</label>
