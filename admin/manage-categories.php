@@ -45,6 +45,14 @@ $categories = mysqli_query($connection, $query);
     ?>
 </p>
 </div>
+<?php elseif(isset($_SESSION['delete-category-success'])) : //shows if delete category was successful?>
+    <div class="alert_message success container">
+    <p>
+    <?= $_SESSION['delete-category-success'];
+    unset($_SESSION['delete-category-success']);
+    ?>
+</p>
+</div>
 
 <?php endif ?>
 <div class="container dashboard_container">
@@ -102,7 +110,7 @@ $categories = mysqli_query($connection, $query);
         <tr>
             <td><?= $category['title'] ?></td>
             <td><a href="<?= ROOT_URL ?>admin/edit-category.php?id=<?= $category['id'] ?>" class="btn sm">Edit</a></td>
-            <td><a href="<?= ROOT_URL ?>admin/edit-category.php?id=<?= $category['id'] ?>" class="btn sm danger">Delete</a></td>
+            <td><a href="<?= ROOT_URL ?>admin/delete-category.php?id=<?= $category['id'] ?>" class="btn sm danger">Delete</a></td>
         </tr>
 
         <?php endwhile ?>
