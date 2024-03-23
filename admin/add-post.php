@@ -5,16 +5,29 @@ session_start();
 // fetch categories from database
 $query = "SELECT * FROM categories";
 $categories = mysqli_query($connection,$query);
+
+// get back form data if form was invalid
+$title = $_SESSION['add-post-data']['title'] ?? null;
+$body = $_SESSION['add-post-data']['body'] ?? null;
+
+// dlete form data session
+unset($_SESSION['add-post-data']);
 ?>
 
 <section class="form_section">
 <div class="container form_section-container">
 <h2>Add Post</h2>
+<?php if(isset($_SESSION['add-post'])) : ?>
 <div class="alert_message error">
-<p>This is an error message</p>
+<p>
+  <?= $_SESSION['add-post'];
+  unset($_SESSION['add-post']);
+  ?>
+</p>
 </div>
+<?php endif ?>
 <form action="<?= ROOT_URL ?>admin/add-post-logic.php" enctype="multipart/form-data" method="post">
-    <input type="text" name="title" placeholder="Title">
+    <input type="text" name="title" value="<?= $title ?>" placeholder="Title">
     <select name="category">
 
       <?php while($category = mysqli_fetch_assoc($categories)) : ?>
@@ -22,7 +35,7 @@ $categories = mysqli_query($connection,$query);
         <?php endwhile ?>
     </select>
 
-    <textarea rows="10" name="body" placeholder="Body"></textarea>
+    <textarea rows="10" name="body" placeholder="Body"><?= $body ?></textarea>
 
     <?php if(isset($_SESSION['user_is_admin'])) : ?>
 

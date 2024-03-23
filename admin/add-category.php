@@ -22,7 +22,7 @@ unset($_SESSION['add-category-data']);
     <?php endif ?>
 <form action="<?= ROOT_URL ?>admin/add-category-logic.php" method="post">
     <input type="text" value="<?= $title ?>" name="title" placeholder="Title">
-     <textarea rows="4" value="<?= $description ?>" name="description" placeholder="Description"></textarea>
+     <textarea rows="4" name="description" placeholder="Description"><?= $description ?></textarea>
      <button class="btn" name="submit" type="submit">Add Category</button>
 </form>
 </div>
